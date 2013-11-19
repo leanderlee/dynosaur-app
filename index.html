@@ -1,48 +1,83 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-	<title>Page Title</title> 
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="styles/default.css">
+	<link rel="stylesheet" href="styles/dynosaur.css">
 </head>
 <body>
-	<!-- Start of first page -->
-	<div data-role="page" id="foo">
 
-		<div data-role="header">
-			<h1>Foo</h1>
-		</div><!-- /header -->
-
-		<div data-role="content">	
-			<p>I'm first in the source order so I'm shown as the page.</p>		
-			<p>View internal page called <a href="#bar"  data-transition="flip">bar</a></p>	
-		</div><!-- /content -->
-
-		<div data-role="footer">
-			<h4>Page Footer</h4>
-		</div><!-- /footer -->
-	</div><!-- /page -->
+	<!-- Templates -->
+	
+	<script id="app-template" type="text/x-swig-template">
+		<div class="app app-button" data-target="app">
+			<h3>{{ app.name }}</h3>
+			<p>{{ app.description }}</p>
+		</div>
+	</script>
 
 
-	<!-- Start of second page -->
-	<div data-role="page" id="bar">
+	<!-- Page Layouts -->
 
-		<div data-role="header">
-			<h1>Bar</h1>
-		</div><!-- /header -->
 
-		<div data-role="content">	
-			<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
-			<p><a href="#foo">Back to foo</a></p>	
-		</div><!-- /content -->
+	<!-- Splash -->
+	<div class="app-page" data-page="splash">
+		Splash
+	</div>
+	
+	<!-- Login -->
+	<div class="app-page" data-page="login">
+		Splash
+	</div>
 
-		<div data-role="footer">
-			<h4>Page Footer</h4>
-		</div><!-- /footer -->
-	</div><!-- /page -->
+	<!-- Home -->
+	<div class="app-page" data-page="home">
+		<div class="app-topbar">
+		<div class="app-button right" data-target="page2">Settings</div>
+		<div class="app-title">Select an App</div>
+		</div>
+		<div class="app-content">
+		<div id="apps-list" class="app-section"></div>
+		</div>
+	</div>
+
+
+	<!-- Home -->
+	<div class="app-page" data-page="app">
+		<div class="app-topbar">
+		<div class="app-button left" data-back="true">Back</div>
+		<div class="app-title">Awesome App 2</div>
+		</div>
+		<div class="app-content">
+		Page 2 is lonely
+		</div>
+	</div>
+
+	<script src="library/zepto.js"></script>
+	<script src="library/app.js"></script>
+	<script src="library/swig.js"></script>
+	<script src="pages/home.js"></script>
+	<script>
+		App.setDefaultTransition('slide-left');
+
+		App.populator('splash', function (page) {
+			$("body").load("home.html", function () {
+				$("<div />").appendTo("body");
+				App.load("home", "fade");
+			})
+		});
+
+		App.populator('app', function (page) {
+		// put stuff here
+		});
+
+		try {
+			App.restore();
+		} catch (err) {
+			App.load('splash');
+		}
+	</script>
 </body>
 </html>
+

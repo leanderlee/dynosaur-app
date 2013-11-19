@@ -1,0 +1,12 @@
+body {
+	background: #1b1b23;
+}
+.app.app-button {
+	height: auto;
+	text-align: left;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.app-section {
+	background: inherit;
+}

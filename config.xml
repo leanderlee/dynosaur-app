@@ -15,16 +15,14 @@
         Leander, Parth and Beatrice
     </author>
 
-    <preference name="orientation" value="portrait" />
+    <preference name="orientation" value="landscape" />
 
     <!-- Android Settings -->
     <preference name="android-minSdkVersion" value="13" />
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
-    <preference name="android-windowSoftInputMode" value="adjustPan" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize|adjustPan" />
     <preference name="KeepRunning" value="false"/>
     <preference name="splash-screen-duration" value="2000"/>
-
-    <content src="index.html" />
 
     <icon src="icons/icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="icons/AppIcon36.png" />

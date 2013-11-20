@@ -34,4 +34,6 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
 
+    <content src="index.html" />
+    
 </widget>

@@ -14,6 +14,13 @@
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
-        Leander Lee and Parth Dave
+        Leander, Parth and Beatrice
     </author>
+    
+    <preference name="orientation" value="landscape" />
+
+    <!-- Android Settings -->
+    <preference name="android-windowSoftInputMode" value="adjustResize" />
+    <preference name="splash-screen-duration" value="2000"/>
+
 </widget>

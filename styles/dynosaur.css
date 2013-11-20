@@ -19,10 +19,11 @@ body {
 }
 	#login-page .logo {
 		display: inline-block;
+		width: 90%;
 		margin: 100px auto 30px;
 	}
 #login-form {
-	width: 400px;
+	width: 90%;
 	margin: 0 auto;
 }
 	#login-form .first {

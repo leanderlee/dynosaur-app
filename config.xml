@@ -20,7 +20,8 @@
     <preference name="orientation" value="landscape" />
 
     <!-- Android Settings -->
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="android-minSdkVersion" value="8" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize|adjustPan" />
     <preference name="splash-screen-duration" value="2000"/>
 
 

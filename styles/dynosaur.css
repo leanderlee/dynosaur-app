@@ -181,14 +181,28 @@ body {
 			margin: 15px 25px 30px;	
 			color: #9b9898;
 		}
-	#app-page .app-button {
-		color: #ffffff;
+	#app-page .app-create {
+		width: 60%;
+		color: #00afed;
+		border: 3px solid #00afed;
 		border-radius: 5px;
+	}
+	#app-page .app-create.active {
+		background: #272734;
+		border: 3px solid #ffffff;
+		color: #ffffff;
+	}
+	#app-page .app-section {
 		background: transparent;
 	}
-	#app-page .app-button.active {
-		background: #272734;
-		color: #00afed;
+	#app-page .app-option {
+		background: #ffffff;	
+		opacity: 0.5;
+	}
+	#app-page .app-option:focus {
+		transition: opacity 0.3s;
+		color: #121212;
+		opacity: 1;
 	}
 
 .app-topbar .app-button.active {

@@ -21,6 +21,22 @@
 		</div>
 	</script>
 
+	<script id="option-text-template" type="text/x-swig-template">
+		<div class="app-options-text app-section">
+			<input class="app-input app-option" type="text" value="{{ option.value }}" placeholder="{{ option.label }}" data-property="{{ option.property }}">
+		</div>
+	</script>
+	<script id="option-select-template" type="text/x-swig-template">
+		<div class="app-options-select app-section">
+			<select class="app-input app-option" data-property="{{ option.property }}">
+				<option value="">{{ option.label }}</option>
+				{% for opt in option.options %}
+				<option value="{{ opt.value }}">{{ opt.label }}</option>
+				{% endfor %}
+			</select>
+		</div>
+	</script>
+
 
 	<!-- Page Layouts -->
 
@@ -69,12 +85,12 @@
 			</div>
 			<div class="app-box">
 				<h3>App Options</h3>
-				<div class="app-options app-text" class="app-section">
+				<div class="app-options app-text" class="app-section" id="options-list">
 					There are no options.
 				</div>
 			</div>
 			<div class="app-options app-text" class="app-section">
-				<div class="app-button">Create this App</div>
+				<div class="app-button app-create">Create this App</div>
 			</div>
 		</div>
 	</div>

@@ -20,8 +20,10 @@
     <preference name="orientation" value="landscape" />
 
     <!-- Android Settings -->
-    <preference name="android-minSdkVersion" value="8" />
-    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize|adjustPan" />
+    <preference name="android-minSdkVersion" value="13" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
+    <preference name="KeepRunning" value="false"/>
     <preference name="splash-screen-duration" value="2000"/>
 
 

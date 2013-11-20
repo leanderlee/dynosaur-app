@@ -23,7 +23,7 @@ var DynoAPI = function () {
 	// Public methods
 	self.login = function (email, password, callback) {
 		callback = callback || function(){};
-		get("/login", { email: email, password: password }, callback);
+		post("/login", { username: email, password: password }, callback);
 	};
 	self.isLoggedIn = function (callback) {
 		callback = callback || function(){};

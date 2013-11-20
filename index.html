@@ -9,7 +9,7 @@
 <body>
 
 	<!-- Templates -->
-
+	
 	<script id="app-template" type="text/x-swig-template">
 		<div class="app app-button" data-target="app">
 			<h3>{{ app.name }}</h3>
@@ -53,10 +53,11 @@
 	</div>
 
 
-	<!-- Home -->
+	<!-- App -->
 	<div class="app-page" id="app-page" data-page="app">
 		<div class="app-topbar">
 			<div class="app-button left" data-back="true">Back</div>
+			<div class="app-button right" data-target="create">Create</div>
 			<div class="app-title">Awesome App 2</div>
 		</div>
 		<div class="app-content">
@@ -70,6 +71,7 @@
 	<script src="pages/splash.js"></script>
 	<script src="pages/login.js"></script>
 	<script src="pages/home.js"></script>
+	<script src="pages/app.js"></script>
 
 	<script>
 		App.setDefaultTransition('slide-left');

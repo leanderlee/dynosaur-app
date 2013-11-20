@@ -15,9 +15,9 @@ App.populator('home', function (page) {
 
 	for (var i = 0; i < apps.length; i++) {
 		var html = template({ app: apps[i] });
-			console.log(apps[i]);
-		$(html).on('click', function () {
-			App.load("app", { app: apps[i] });
+		$(html).data("app", i).on('click', function () {
+			console.log(apps[$(this).data("app")]);
+			App.load("app", apps[$(this).data("app")]);
 		}).appendTo($("#apps-list", page));
 	}
 });

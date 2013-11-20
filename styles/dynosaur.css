@@ -59,33 +59,87 @@ body {
 #home-page {
 	background: #1b1b24;
 }
+
+.app-topbar {
+	background: #232139;
+	border-bottom: 1px solid rgba(0,0,0, 0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.78);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.78);
+	box-shadow: 0 0 5px rgba(0,0,0,0.78);
+}
+	.app-title {
+		text-transform: uppercase;
+		font-weight: normal;
+		font-size: 18px;
+	}
+
 #apps-list {
 	background: inherit;
 	margin: 0;
 }
-	#apps-list .app:active {
-		color: red;
-	}
 	#apps-list .app {
+		position: relative;
+		display: block;
 		height: auto;
 		text-align: left;
 		font-weight: normal;
 		line-height: 1em;
 		border: none;
-		border-left: 4px solid #00afed;
+		border-bottom: 1px solid rgba(105, 105, 111, 0.2);
 		padding: 20px 10px;
-		background: #3b394b;
 		color: #ffffff;
 		margin-bottom: 1px;
-	}
-		#apps-list .app h3 {
-			font-weight: normal;
-			margin: 5px auto;
-		}
-		#apps-list .app p {
-			font-size: 0.9em;
-			color: #9b9898;
-		}
-		#apps-list .app {
+		background-image: -webkit-gradient(linear, left center, right center, from(#53506a), to(#3f3d51));
+		background-image: -moz-linear-gradient(left, #53506a, #3f3d51);
+		background-image: linear-gradient(to right, #53506a, #3f3d51);
+		-webkit-box-shadow: inset 0 1px 10px rgba(0,0,0,0.21);
+		-moz-box-shadow: inset 0 1px 10px rgba(0,0,0,0.21);
+		box-shadow: inset 0 1px 10px rgba(0,0,0,0.21);
 
+	}
+		#apps-list .app .glow {
+			position: absolute;
+			left: 0; top: 0;
+			height: 100%;
+			width: 4px;
+			margin-bottom: 1px;
+			display: inline-block;
+			background: #00afed;
+			-webkit-box-shadow: 0 0 6px rgba(61,252,246,0.44);
+			-moz-box-shadow: 0 0 6px rgba(61,252,246,0.44);
+			box-shadow: 0 0 6px rgba(61,252,246,0.44);
+		}
+		#apps-list .app-thumbnail {
+			vertical-align: top;
+			display: inline-block;
+			height: 48px;
+			width: 48px;
+			background: #232139;
+			margin-left: 15px;
+		}
+		#apps-list .app-details {
+			display: inline-block;
+			margin-left: 20px;
+			width: 70%;
+		}
+			#apps-list .app h3 {
+				font-weight: normal;
+				margin: 5px auto;
+			}
+			#apps-list .app p {
+				font-size: 0.9em;
+				color: #9b9898;
+				white-space: normal;
+			}
+
+	#apps-list .app:active {
+		-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.88);
+		-moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.88);
+		box-shadow: inset 0 0 50px rgba(0,0,0,0.88);
+		background-image: -webkit-gradient(linear, left center, right center, from(#3f3d51), to(#000000));
+		background-image: -moz-linear-gradient(left, #3f3d51, #000000);
+		background-image: linear-gradient(to right, #3f3d51, #000000);
+	}
+		#apps-list .app:active .glow {
+			color: #ffffff;
 		}

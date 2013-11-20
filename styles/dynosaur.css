@@ -70,6 +70,7 @@ body {
 	.app-title {
 		text-transform: uppercase;
 		font-weight: normal;
+		text-align: center;
 		font-size: 18px;
 	}
 
@@ -181,12 +182,13 @@ body {
 			color: #9b9898;
 		}
 	#app-page .app-button {
-		color: #00afed;
-	}
-	#app-page .app-button.active {
 		color: #ffffff;
 		border-radius: 5px;
+		background: transparent;
+	}
+	#app-page .app-button.active {
 		background: #272734;
+		color: #00afed;
 	}
 
 .app-topbar .app-button.active {

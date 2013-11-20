@@ -7,7 +7,7 @@ var DynoAPI = function () {
 			callback = callback || function(){};
 			var data = $.extend({}, data);
 			$.ajax({
-				url: url,
+				url: "http://dynosapp.com" + url,
 				type: method,
 				data: data,
 				dataType: "json",
@@ -27,11 +27,11 @@ var DynoAPI = function () {
 	};
 	self.isLoggedIn = function (callback) {
 		callback = callback || function(){};
-		get("/logged_in", { email: email, password: password }, callback);
+		get("/logged_in", {}, callback);
 	};
 	self.apps = function (callback) {
 		callback = callback || function(){};
-		get("/apps", { email: email, password: password }, callback);
+		get("/apps", {}, callback);
 	};
 	self.create = function (app, options, callback) {
 		callback = callback || function(){};

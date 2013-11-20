@@ -63,10 +63,12 @@ var DynoAPI = function () {
 	};
 	self.create = function (app, options, callback) {
 		callback = callback || function(){};
-		callback({
-			success: true,
-			result: "http://glacial-wave-8349.herokuapp.com"
-		})
+		setTimeout(function () {
+			callback({
+				success: true,
+				result: "http://glacial-wave-8349.herokuapp.com"
+			})
+		}, 5000);
 	};
 
 	return self;

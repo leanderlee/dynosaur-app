@@ -79,11 +79,16 @@ body {
 			background: #7976b4;
 			color: #ffffff;
 		}
-		#login-form.error input:focus {
-			color: #ff0000;
-		}
-		#login-form.error input {
-			color: #ff0000;
+		#login-error {
+			color: #ffffff;
+			background: #C24748;
+			border-radius: 3px;
+			padding: 6px 20px;
+			position: absolute;
+			top: 20px;
+			left: 5%;
+			font-size: 0.9em;
+			width: 80%;
 		}
 
 #instructions-page {

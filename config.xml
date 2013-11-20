@@ -20,8 +20,8 @@
     <preference name="orientation" value="landscape" />
 
     <!-- Android Settings -->
-    <preference name="android-windowSoftInputMode" value="stateVisible" />
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
     <preference name="splash-screen-duration" value="2000"/>
-    
+
 
 </widget>

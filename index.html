@@ -9,7 +9,7 @@
 <body>
 
 	<!-- Templates -->
-	
+
 	<script id="app-template" type="text/x-swig-template">
 		<div class="app app-button" data-target="app">
 			<h3>{{ app.name }}</h3>
@@ -22,62 +22,60 @@
 
 
 	<!-- Splash -->
-	<div class="app-page" data-page="splash">
-		Splash
+	<div class="app-page" id="splash-page" data-page="splash">
+		<div class="app-content">
+			<img width="100%" height="100%" src="images/login-bg.png">
+		</div>
 	</div>
 	
 	<!-- Login -->
-	<div class="app-page" data-page="login">
-		Splash
+	<div class="app-page" id="login-page" data-page="login">
+		<div class="app-content">
+			<img class="logo" src="images/dyno-logo.png">
+			<form id="login-form">
+				<input class="app-input first" type="text" placeholder="example@salesforce.com">
+				<input class="app-input last" type="password" placeholder="password">
+				<div class="app-button center" data-target="home">Sign In with Salesforce</div>
+			</form>
+		</div>
 	</div>
 
 	<!-- Home -->
-	<div class="app-page" data-page="home">
+	<div class="app-page" id="home-page" data-page="home">
 		<div class="app-topbar">
-		<div class="app-button right" data-target="page2">Settings</div>
-		<div class="app-title">Select an App</div>
+			<div class="app-button left" data-back="true">Back</div>
+			<div class="app-button right" data-target="page2">Settings</div>
+			<div class="app-title">Select an App</div>
 		</div>
 		<div class="app-content">
-		<div id="apps-list" class="app-section"></div>
+			<div id="apps-list" class="app-section"></div>
 		</div>
 	</div>
 
 
 	<!-- Home -->
-	<div class="app-page" data-page="app">
+	<div class="app-page" id="app-page" data-page="app">
 		<div class="app-topbar">
-		<div class="app-button left" data-back="true">Back</div>
-		<div class="app-title">Awesome App 2</div>
+			<div class="app-button left" data-back="true">Back</div>
+			<div class="app-title">Awesome App 2</div>
 		</div>
 		<div class="app-content">
-		Page 2 is lonely
+			Page 2 is lonely
 		</div>
 	</div>
 
 	<script src="library/zepto.js"></script>
 	<script src="library/app.js"></script>
 	<script src="library/swig.js"></script>
+	<script src="pages/splash.js"></script>
+	<script src="pages/login.js"></script>
 	<script src="pages/home.js"></script>
+
 	<script>
 		App.setDefaultTransition('slide-left');
-
-		App.populator('splash', function (page) {
-			$("body").load("home.html", function () {
-				$("<div />").appendTo("body");
-				App.load("home", "fade");
-			})
-		});
-
-		App.populator('app', function (page) {
-		// put stuff here
-		});
-
-		try {
-			App.restore();
-		} catch (err) {
-			App.load('splash');
-		}
+		App.load('splash');
 	</script>
+
 </body>
 </html>
 

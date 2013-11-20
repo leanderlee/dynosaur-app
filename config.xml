@@ -61,5 +61,8 @@
     <icon gap:platform="webos" src="icons/AppIcon64.png" />
     <icon gap:platform="winphone" src="icons/AppIcon48.png" />
     <icon gap:platform="winphone" gap:role="background" src="icons/AppIcon173.png" />
+    
+    <access origin="http://dynosapp.com" subdomains="true" />
+    <access origin="*" subdomains="true" />
 
 </widget>

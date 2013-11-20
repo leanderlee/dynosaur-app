@@ -255,10 +255,6 @@ body {
 		color: #121212;
 		opacity: 1;
 	}
-	#app-page .app-space {
-		height: 400px;
-		display: block;
-	}
 
 #create-page {
 	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
@@ -339,4 +335,8 @@ body {
 .app-topbar .app-button.active {
 	background: transparent;
 	color: #00afed;
+}
+.app-space {
+	height: 400px;
+	display: block;
 }

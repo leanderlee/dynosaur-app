@@ -1,11 +1,12 @@
 var DynoAPI = function () {
 	var self = {};
+	var session = "";
 	
 	// Private methods
 	var request = function (method) {
 		return function (url, data, callback) {
 			callback = callback || function(){};
-			var data = $.extend({}, data);
+			var data = $.extend({ session: session }, data);
 			$.ajax({
 				url: "http://dynosapp.com" + url,
 				type: method,
@@ -23,7 +24,11 @@ var DynoAPI = function () {
 	// Public methods
 	self.login = function (email, password, callback) {
 		callback = callback || function(){};
-		post("/login", { username: email, password: password }, callback);
+		post("/login", { username: email, password: password }, function (result) {
+			session = result.session;
+			delete result.session;
+			callback(result)
+		});
 	};
 	self.isLoggedIn = function (callback) {
 		callback = callback || function(){};
@@ -37,7 +42,7 @@ var DynoAPI = function () {
 		callback = callback || function(){};
 		app = app || "";
 		options = JSON.stringify(options || {});
-		post("/create", { app: app, options: options }, callback);
+		post("/create", { app_id: app, options: options }, callback);
 	};
 
 	return self;

@@ -33,11 +33,21 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="android-windowSoftInputMode" value="adjustResize" />
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
 
     <content src="index.html" />
 
-    <icon src="icons/icon.png" />
+    <icon width="36" height="36" src="icons/AppIcon36.png" />
+    <icon width="48" height="48" src="icons/AppIcon48.png" />
+    <icon width="57" height="57" src="icons/AppIcon57.png" />
+    <icon width="64" height="64" src="icons/AppIcon64.png" />
+    <icon width="72" height="72" src="icons/AppIcon72.png" />
+    <icon width="80" height="80" src="icons/AppIcon80.png" />
+    <icon width="96" height="96" src="icons/AppIcon96.png" />
+    <icon width="114" height="114" src="icons/AppIcon114.png" />
+    <icon width="144" height="144" src="icons/AppIcon144.png" />
+    <icon width="173" height="173" src="icons/AppIcon173.png" />
+
     <icon gap:density="ldpi" gap:platform="android" src="icons/AppIcon36.png" />
     <icon gap:density="mdpi" gap:platform="android" src="icons/AppIcon48.png" />
     <icon gap:density="hdpi" gap:platform="android" src="icons/AppIcon72.png" />

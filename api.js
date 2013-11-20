@@ -1,6 +1,6 @@
 var DynoAPI = function () {
 	var self = {};
-
+	
 	// Private methods
 	var request = function (method) {
 		return function (url, data, callback) {
@@ -29,12 +29,15 @@ var DynoAPI = function () {
 		callback = callback || function(){};
 		get("/logged_in", { email: email, password: password }, callback);
 	};
-	self.create = function (name, type, options, callback) {
+	self.apps = function (callback) {
 		callback = callback || function(){};
-		name = name || "";
-		type = type || "";
+		get("/apps", { email: email, password: password }, callback);
+	};
+	self.create = function (app, options, callback) {
+		callback = callback || function(){};
+		app = app || "";
 		options = JSON.stringify(options || {});
-		post("/create", { name: name, type: type, options: options }, callback);
+		post("/create", { app: app, options: options }, callback);
 	};
 
 	return self;

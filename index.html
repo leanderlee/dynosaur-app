@@ -13,7 +13,7 @@
 	<script id="app-template" type="text/x-swig-template">
 		<div class="app app-button" data-target="app">
 			<div class="glow"></div>
-			<div class="app-thumbnail"></div>
+			<div class="app-thumbnail dyno{{ dyno }}"></div>
 			<div class="app-details">
 				<h3>{{ app.name }}</h3>
 				<p>{{ app.description }}</p>
@@ -23,12 +23,13 @@
 
 	<script id="option-text-template" type="text/x-swig-template">
 		<div class="app-options-text app-section">
-			<input class="app-input app-option" type="text" value="{{ option.value }}" placeholder="{{ option.label }}" data-property="{{ option.property }}">
+			<input class="app-input app-option" type="text" value="{{ option.value }}" placeholder="{{ option.label }}" data-id="{{ id }}">
 		</div>
 	</script>
+
 	<script id="option-select-template" type="text/x-swig-template">
 		<div class="app-options-select app-section">
-			<select class="app-input app-option" data-property="{{ option.property }}">
+			<select class="app-input app-option" data-id="{{ id }}">
 				<option value="">{{ option.label }}</option>
 				{% for opt in option.options %}
 				<option value="{{ opt.value }}">{{ opt.label }}</option>
@@ -53,10 +54,22 @@
 		<div class="app-content">
 			<img class="logo" src="images/dyno-logo.png">
 			<form id="login-form">
-				<input class="app-input first" type="email" placeholder="email">
-				<input class="app-input last" type="password" placeholder="password">
-				<div class="app-button center" data-target="home">Sign In with Salesforce</div>
+				<input id="login-email" class="app-input first" type="email" placeholder="email">
+				<input id="login-password" class="app-input last" type="password" placeholder="password">
+				<div id="security-code">
+					<input id="login-security" class="app-input" type="text" placeholder="security code">
+					<div id="security-code-instructions" class="app-button" data-target="instructions"></div>
+				</div>
+				<div id="login-button" class="app-button center">Sign In with Salesforce</div>
 			</form>
+		</div>
+	</div>
+
+	<!-- Instructions -->
+	<div class="app-page" id="instructions-page" data-page="instructions">
+		<div class="app-topbar">
+			<div class="app-button left" data-back="true">&lt Back</div>
+			<div class="app-title">Instructions</div>
 		</div>
 	</div>
 
@@ -81,16 +94,37 @@
 			<div class="app-image"></div>
 			<div class="app-box">
 				<h3>Description</h3>
-				<div class="app-description app-text" class="app-section"></div>
+				<div class="app-description app-text"></div>
 			</div>
 			<div class="app-box">
 				<h3>App Options</h3>
-				<div class="app-options app-text" class="app-section" id="options-list">
+				<div class="app-options app-text" id="options-list">
 					There are no options.
 				</div>
 			</div>
-			<div class="app-options app-text" class="app-section">
+			<div class="app-section">
 				<div class="app-button app-create">Create this App</div>
+			</div>
+			<div class="app-space"></div>
+		</div>
+	</div>
+
+	<!-- Create -->
+	<div class="app-page" id="create-page" data-page="create">
+		<div class="app-topbar">
+			<div class="app-title"></div>
+			<div class="app-button left" data-back="true">&lt Back</div>
+		</div>
+		<div class="app-content">
+			<div class="app-loading">
+				<div class="app-loading-text">Please wait while Dyno creates your app...</div>
+				<div class="dyno"></div>
+			</div>
+			<div class="app-loaded">
+				<div class="checkmark"></div>
+				<a target="_blank" data-rel="external" class="app-link">
+					<div class="app-button">Done! Continue to App.</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -102,8 +136,12 @@
 	<script src="pages/login.js"></script>
 	<script src="pages/home.js"></script>
 	<script src="pages/app.js"></script>
+	<script src="pages/create.js"></script>
+
+	<script src="fake-api.js"></script>
 
 	<script>
+		var Api = new DynoAPI();
 		App.setDefaultTransition('slide-left');
 		App.load('home');
 	</script>

@@ -1,7 +1,9 @@
 App.populator('splash', function (page) {
-	if (false) {
-		App.load("home", "fade");
-	} else {
-		App.load("login", "fade");
-	}
+	Api.isLoggedIn(function (result) {
+		if (result && result.result) {
+			App.load("home", "fade");
+		} else {
+			App.load("login", "fade");
+		}
+	})
 });

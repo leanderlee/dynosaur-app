@@ -23,7 +23,7 @@ body {
 		margin: 100px auto 30px;
 	}
 #login-form {
-	width: 90%;
+	width: 68%;
 	margin: 0 auto;
 }
 	#login-form .first {
@@ -42,6 +42,8 @@ body {
 	#login-form input {
 		background: #ffffff;
 		opacity: 0.5;
+		font-weight: bold;
+		font-size: 0.9em;
 		text-indent: 10px;
 		border: none;
 		outline: none;

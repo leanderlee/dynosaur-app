@@ -12,5 +12,8 @@ App.populator('app', function (page, app) {
 		var html = template({ option: app.options[i] });
 		$(html).appendTo($("#options-list", page));
 	}
+	$(".app-input", page).on("click", function () {
+		$(this).focus();
+	})
 	console.log(app.options);
 });

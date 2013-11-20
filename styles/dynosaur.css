@@ -22,38 +22,40 @@ body {
 		width: 90%;
 		margin: 100px auto 30px;
 	}
-#login-form {
-	width: 90%;
-	margin: 0 auto;
-}
-	#login-form .first {
-		border-radius: 15px 15px 0 0;
-		margin: 0 0 1px 0;
+
+	#login-form {
+		width: 90%;
+		margin: 0 auto;
 	}
-	#login-form .last {
-		border-radius: 0 0 15px 15px;
-		margin: 0 0 10px 0;
-	}
-	#login-form input:focus {
-		transition: opacity 0.3s;
-		color: #121212;
-		opacity: 1;
-	}
-	#login-form input {
-		background: #ffffff;
-		opacity: 0.5;
-		font-weight: bold;
-		font-size: 0.9em;
-		text-indent: 10px;
-		border: none;
-		outline: none;
-	}
-	#login-form .app-button {
-		border-radius: 15px;
-		height: 40px;
-		background: #7976b4;
-		color: #ffffff;
-	}
+		#login-form .first {
+			border-radius: 15px 15px 0 0;
+			margin: 0 0 1px 0;
+		}
+		#login-form .last {
+			border-radius: 0 0 15px 15px;
+			margin: 0 0 10px 0;
+		}
+		#login-form input:focus {
+			transition: opacity 0.3s;
+			color: #121212;
+			opacity: 1;
+		}
+		#login-form input {
+			background: #ffffff;
+			opacity: 0.5;
+			font-weight: bold;
+			font-size: 0.9em;
+			text-indent: 10px;
+			border: none;
+			outline: none;
+		}
+		#login-form .app-button {
+			border-radius: 15px;
+			height: 40px;
+			background: #7976b4;
+			color: #ffffff;
+		}
+
 
 .app.app-button {
 	height: auto;

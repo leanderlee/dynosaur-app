@@ -180,10 +180,6 @@ body {
 			margin: 15px 25px 30px;	
 			color: #9b9898;
 		}
-	#app-page .app-topbar .app-button {
-		font-size: 0.9em;
-		font-weight: normal;
-	}
 	#app-page .app-button {
 		color: #00afed;
 	}

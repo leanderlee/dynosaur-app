@@ -5,7 +5,8 @@ App.populator('create', function (page, making) {
 	Api.create(making.app.id, making.options, function (link) {
 		$(".app-loading", page).hide();
 		$(".app-loaded", page).show();
-		$(".app-link", page).attr("href", link.result).on("click", function () {
+		$(".app-link", page).on("click", function () {
+			window.open(link.result, '_system');
 			App.load("home");
 		});
 	});
